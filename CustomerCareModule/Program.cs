@@ -13,6 +13,8 @@ builder.Services.AddDbContext<ProjectContext>(x => x.UseSqlServer(
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ICustomerCareService, CustomerCareService>();
+builder.Services.AddSession();    //in the controller
+builder.Services.AddHttpContextAccessor();  //from non-controller class
 
 var app = builder.Build();
 
@@ -22,6 +24,8 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
 }
 app.UseStaticFiles();
+
+app.UseSession();  // middleware
 
 app.UseRouting();
 
