@@ -24,7 +24,7 @@ namespace CustomerCareModule.BAL
             complaint.Description = complaintViewModel.Description;
             complaint.DateOfRegistration = DateTime.Now;
             complaint.DateOfAction = DateTime.Now;        
-            complaint.StatusId = 1;
+            complaint.StatusId = complaintViewModel.StatusId;
             complaint.UserId = ihttpContextAccessor.HttpContext.Session.GetInt32("UserId");
 
 

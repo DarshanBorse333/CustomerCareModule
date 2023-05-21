@@ -12,6 +12,8 @@ namespace CustomerCareModule.BAL
         {
             this.db = _db;
         }
+
+
         public UserViewModel GetUser(LoginViewModel loginViewModel)
         {
            
